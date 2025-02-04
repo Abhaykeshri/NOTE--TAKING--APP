@@ -7,23 +7,24 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f7f7f7;
+  background-color: #e0f7fa; /* Soft gradient background */
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* Full viewport height */
+  height: 100vh;
   margin: 0;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
 }
 
 .App {
   width: 100%;
   height: 100%;
-  max-width: 800px; /* Optional max width for larger screens */
+  max-width: 900px; /* Slightly larger max-width */
   background-color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px; /* Slightly more padding */
+  border-radius: 20px; /* More rounded corners */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,50 +33,59 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
-  font-size: 3rem;
+  color: #004d40; /* Dark teal color */
+  font-size: 4rem; /* Increased font size */
   margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft text shadow */
 }
 
 h3 {
   text-align: center;
-  color: #666;
+  color: #00796b;
+  font-size: 1.2rem;
   margin-top: 20px;
 }
 
 textarea {
   width: 100%;
-  height: 140px;
-  padding: 15px;
+  height: 150px;
+  padding: 18px;
   font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #80deea;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   resize: none;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  transition: box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #004d40; /* Highlighted focus effect */
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   font-size: 18px;
-  padding: 12px 24px;
+  padding: 15px 30px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: inline-block;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #388e3c;
   transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #bdbdbd;
   cursor: not-allowed;
 }
 
@@ -84,12 +94,17 @@ button:active {
 }
 
 .note {
-  background-color: #f1f1f1;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.note:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .note p {
@@ -99,7 +114,8 @@ button:active {
 audio {
   width: 100%;
   margin-top: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 .recording-btns {
@@ -122,7 +138,7 @@ button.stop-btn {
 
 button.recording-btn:hover,
 button.stop-btn:hover {
-  background-color: #e65100;
+  background-color: #f57c00;
   transform: scale(1.05);
 }
 
@@ -131,49 +147,17 @@ button.stop-btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-@media (max-width: 768px) {
-  .App {
-    padding: 15px;
-  }
 
-  textarea {
-    height: 120px;
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 16px;
-  }
-
-  .note {
-    font-size: 14px;
-    padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .App {
-    padding: 10px;
-  }
-
-  textarea {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-  }
-}
-/* Add styles for the Delete button */
+/* Delete button style */
 .delete-btn {
   background-color: #f44336;
   color: white;
-  font-size: 12px; /* Reduced font size */
-  padding: 4px 8px; /* Reduced padding */
+  font-size: 14px;
+  padding: 6px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 12px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -189,4 +173,39 @@ button.stop-btn:disabled {
 .delete-btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+  }
+
+  textarea {
+    height: 120px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  .note {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 15px;
+  }
+
+  textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
