@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #e0f7fa; /* Soft gradient background */
+  background-color: #e0f7fa;
   color: #333;
   display: flex;
   justify-content: center;
@@ -15,15 +15,15 @@ body {
   height: 100vh;
   margin: 0;
   background: linear-gradient(135deg, #e0f7fa, #80deea);
+  padding: 10px;
 }
 
 .App {
   width: 100%;
-  height: 100%;
-  max-width: 900px; /* Slightly larger max-width */
+  max-width: 900px;
   background-color: #fff;
-  padding: 30px; /* Slightly more padding */
-  border-radius: 20px; /* More rounded corners */
+  padding: 30px;
+  border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
@@ -33,55 +33,53 @@ body {
 
 h1 {
   text-align: center;
-  color: #004d40; /* Dark teal color */
-  font-size: 4rem; /* Increased font size */
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft text shadow */
+  color: #004d40;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 h3 {
   text-align: center;
   color: #00796b;
-  font-size: 1.2rem;
-  margin-top: 20px;
+  font-size: 1rem;
+  margin-top: 15px;
 }
 
 textarea {
   width: 100%;
-  height: 150px;
-  padding: 18px;
+  min-height: 120px;
+  padding: 15px;
   font-size: 16px;
   border-radius: 10px;
   border: 1px solid #80deea;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   resize: none;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   transition: box-shadow 0.3s ease;
 }
 
 textarea:focus {
   outline: none;
-  box-shadow: 0 0 10px #004d40; /* Highlighted focus effect */
+  box-shadow: 0 0 10px #004d40;
 }
 
 button {
   background-color: #4caf50;
   color: white;
-  font-size: 18px;
-  padding: 15px 30px;
+  font-size: 16px;
+  padding: 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
-  margin-bottom: 20px;
-  display: inline-block;
+  margin-bottom: 15px;
 }
 
 button:hover {
   background-color: #388e3c;
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 button:disabled {
@@ -95,8 +93,8 @@ button:active {
 
 .note {
   background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -113,7 +111,7 @@ button:active {
 
 audio {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
 }
@@ -122,6 +120,8 @@ audio {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .recording-btns button {
@@ -175,37 +175,77 @@ button.stop-btn:disabled {
   cursor: not-allowed;
 }
 
-/* Media Queries */
+/* Responsive Styles */
 @media (max-width: 768px) {
+  body {
+    height: auto;
+  }
+
   .App {
     padding: 20px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
   }
 
   textarea {
-    height: 120px;
+    height: 100px;
     font-size: 14px;
   }
 
   button {
-    font-size: 16px;
+    font-size: 14px;
+    padding: 12px;
   }
 
   .note {
     font-size: 14px;
-    padding: 15px;
+    padding: 12px;
+  }
+
+  .recording-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .recording-btns button {
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .App {
     padding: 15px;
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
   }
 
   textarea {
+    height: 90px;
     font-size: 14px;
+    padding: 12px;
   }
 
   button {
     font-size: 14px;
+    padding: 12px;
+  }
+
+  .note {
+    font-size: 14px;
+    padding: 10px;
   }
 }
